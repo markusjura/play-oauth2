@@ -1,9 +1,141 @@
-2015-04-27 10:34:53,220 - [INFO] - from play in pool-6-thread-3 
+2015-04-27 14:13:48,370 - [INFO] - from play in pool-48-thread-6 
 Listening for HTTP on /0:0:0:0:0:0:0:0:9000
 
-2015-04-27 10:35:04,540 - [INFO] - from play in play-internal-execution-context-1 
+2015-04-27 14:13:53,220 - [INFO] - from application in play-internal-execution-context-1 
+ReactiveMongoPlugin starting...
+
+2015-04-27 14:13:53,229 - [INFO] - from application in play-internal-execution-context-1 
+ReactiveMongoPlugin successfully started with db 'auth-test'! Servers:
+		[localhost:27017]
+
+2015-04-27 14:13:53,234 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
 
-2015-04-27 10:35:33,094 - [INFO] - from play in play-internal-execution-context-1 
+2015-04-27 14:13:57,576 - [DEBUG] - from services.MongoService in play-akka.actor.default-dispatcher-5 
+find: users = Map()
+
+2015-04-27 14:13:57,579 - [DEBUG] - from services.MongoService in play-akka.actor.default-dispatcher-5 
+save: user = BasicProfile(github,1832216,None,None,Some(Markus Jura),Some(markus.jura@gmail.com),Some(https://avatars.githubusercontent.com/u/1832216?v=3),AuthenticationMethod(oauth2),None,Some(OAuth2Info(f0e59e323fd1e5b73906461f4f0ea5b043b1fb42,Some(bearer),None,None)),None)
+
+2015-04-27 14:13:57,588 - [INFO] - from play in play-akka.actor.default-dispatcher-5 
+Starting application default Akka system.
+
+2015-04-27 14:13:57,768 - [INFO] - from application in play-akka.actor.default-dispatcher-5 
+traced signup event for user 1832216
+
+2015-04-27 14:13:57,769 - [INFO] - from application in play-akka.actor.default-dispatcher-5 
+current language is Lang(en,US)
+
+2015-04-27 14:15:30,288 - [ERROR] - from reactivemongo.core.actors.MongoDBSystem in application-akka.actor.default-dispatcher-2 
+The entire node set is unreachable, is there a network problem?
+
+2015-04-27 14:15:34,188 - [INFO] - from application in play-internal-execution-context-1 
+ReactiveMongoPlugin stops, closing connections...
+
+2015-04-27 14:15:44,196 - [WARN] - from play in play-internal-execution-context-1 
+Error stopping plugin
+java.util.concurrent.TimeoutException: Futures timed out after [10 seconds]
+	at scala.concurrent.impl.Promise$DefaultPromise.ready(Promise.scala:219) ~[scala-library-2.11.2.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.ready(Promise.scala:153) ~[scala-library-2.11.2.jar:na]
+	at scala.concurrent.Await$$anonfun$ready$1.apply(package.scala:95) ~[scala-library-2.11.2.jar:na]
+	at scala.concurrent.Await$$anonfun$ready$1.apply(package.scala:95) ~[scala-library-2.11.2.jar:na]
+	at scala.concurrent.BlockContext$DefaultBlockContext$.blockOn(BlockContext.scala:53) ~[scala-library-2.11.2.jar:na]
+	at scala.concurrent.Await$.ready(package.scala:95) ~[scala-library-2.11.2.jar:na]
+	at play.modules.reactivemongo.ReactiveMongoPlugin$$anonfun$onStop$2.apply(ReactiveMongoPlugin.scala:57) ~[play2-reactivemongo_2.11-0.10.5.0.akka23.jar:0.10.5.0.akka23]
+	at play.modules.reactivemongo.ReactiveMongoPlugin$$anonfun$onStop$2.apply(ReactiveMongoPlugin.scala:50) ~[play2-reactivemongo_2.11-0.10.5.0.akka23.jar:0.10.5.0.akka23]
+	at scala.Option.map(Option.scala:145) [scala-library-2.11.2.jar:na]
+	at play.modules.reactivemongo.ReactiveMongoPlugin.onStop(ReactiveMongoPlugin.scala:50) ~[play2-reactivemongo_2.11-0.10.5.0.akka23.jar:0.10.5.0.akka23]
+	at play.api.Play$$anonfun$stop$1$$anonfun$apply$1$$anonfun$apply$mcV$sp$2.apply(Play.scala:108) [play_2.11-2.3.7.jar:2.3.7]
+	at play.api.Play$$anonfun$stop$1$$anonfun$apply$1$$anonfun$apply$mcV$sp$2.apply(Play.scala:107) [play_2.11-2.3.7.jar:2.3.7]
+	at scala.collection.immutable.List.foreach(List.scala:381) [scala-library-2.11.2.jar:na]
+	at play.api.Play$$anonfun$stop$1$$anonfun$apply$1.apply$mcV$sp(Play.scala:107) [play_2.11-2.3.7.jar:2.3.7]
+	at play.api.Play$$anonfun$stop$1$$anonfun$apply$1.apply(Play.scala:107) [play_2.11-2.3.7.jar:2.3.7]
+	at play.api.Play$$anonfun$stop$1$$anonfun$apply$1.apply(Play.scala:107) [play_2.11-2.3.7.jar:2.3.7]
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:21) [play_2.11-2.3.7.jar:2.3.7]
+	at play.api.Play$$anonfun$stop$1.apply(Play.scala:106) [play_2.11-2.3.7.jar:2.3.7]
+	at play.api.Play$$anonfun$stop$1.apply(Play.scala:105) [play_2.11-2.3.7.jar:2.3.7]
+	at scala.Option.map(Option.scala:145) [scala-library-2.11.2.jar:na]
+	at play.api.Play$.stop(Play.scala:105) [play_2.11-2.3.7.jar:2.3.7]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:142) [play_2.11-2.3.7.jar:2.3.7]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1$$anonfun$1.apply(ApplicationProvider.scala:130) [play_2.11-2.3.7.jar:2.3.7]
+	at scala.Option.map(Option.scala:145) [scala-library-2.11.2.jar:na]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:130) [play_2.11-2.3.7.jar:2.3.7]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$1.apply(ApplicationProvider.scala:128) [play_2.11-2.3.7.jar:2.3.7]
+	at scala.util.Success.flatMap(Try.scala:230) [scala-library-2.11.2.jar:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:128) [play_2.11-2.3.7.jar:2.3.7]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:120) [play_2.11-2.3.7.jar:2.3.7]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) [scala-library-2.11.2.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) [scala-library-2.11.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) [scala-library-2.11.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.11.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.2.jar:na]
+
+2015-04-27 14:15:44,197 - [INFO] - from play in play-internal-execution-context-1 
+Shutdown application default Akka system.
+
+2015-04-27 14:15:44,207 - [INFO] - from application in ForkJoinPool-2-worker-15 
+ReactiveMongo Connections stopped. [Failure(akka.pattern.AskTimeoutException: Ask timed out on [Actor[akka://application/user/$b#1357786690]] after [10000 ms])]
+
+2015-04-27 14:15:44,263 - [INFO] - from application in play-internal-execution-context-1 
+ReactiveMongoPlugin starting...
+
+2015-04-27 14:15:44,263 - [INFO] - from application in play-internal-execution-context-1 
+ReactiveMongoPlugin successfully started with db 'auth-test'! Servers:
+		[localhost:27017]
+
+2015-04-27 14:15:44,263 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
+
+2015-04-27 14:15:48,636 - [DEBUG] - from services.MongoService in play-akka.actor.default-dispatcher-9 
+find: users = Map()
+
+2015-04-27 14:15:48,638 - [DEBUG] - from services.MongoService in play-akka.actor.default-dispatcher-9 
+save: user = BasicProfile(github,1832216,None,None,Some(Markus Jura),Some(markus.jura@gmail.com),Some(https://avatars.githubusercontent.com/u/1832216?v=3),AuthenticationMethod(oauth2),None,Some(OAuth2Info(f0e59e323fd1e5b73906461f4f0ea5b043b1fb42,Some(bearer),None,None)),None)
+
+2015-04-27 14:15:48,645 - [INFO] - from play in play-akka.actor.default-dispatcher-9 
+Starting application default Akka system.
+
+2015-04-27 14:15:51,274 - [ERROR] - from reactivemongo.api.Failover in play-akka.actor.default-dispatcher-11 
+Got an error, no more attempts to do. Completing with a failure...
+reactivemongo.core.actors.Exceptions$PrimaryUnavailableException$: MongoError['No primary node is available!']
+	at reactivemongo.core.actors.Exceptions$PrimaryUnavailableException$.<clinit>(actors.scala) ~[reactivemongo_2.11-0.10.5.0.akka23.jar:0.10.5.0.akka23]
+	at reactivemongo.core.actors.MongoDBSystem$$anonfun$pickChannel$4.apply(actors.scala:508) ~[reactivemongo_2.11-0.10.5.0.akka23.jar:0.10.5.0.akka23]
+	at reactivemongo.core.actors.MongoDBSystem$$anonfun$pickChannel$4.apply(actors.scala:508) ~[reactivemongo_2.11-0.10.5.0.akka23.jar:0.10.5.0.akka23]
+	at scala.Option.getOrElse(Option.scala:120) ~[scala-library-2.11.2.jar:na]
+	at reactivemongo.core.actors.MongoDBSystem.pickChannel(actors.scala:508) ~[reactivemongo_2.11-0.10.5.0.akka23.jar:0.10.5.0.akka23]
+	at reactivemongo.core.actors.MongoDBSystem$$anonfun$receive$1.applyOrElse(actors.scala:273) ~[reactivemongo_2.11-0.10.5.0.akka23.jar:0.10.5.0.akka23]
+	at akka.actor.Actor$class.aroundReceive(Actor.scala:465) ~[akka-actor_2.11-2.3.6.jar:na]
+	at reactivemongo.core.actors.MongoDBSystem.aroundReceive(actors.scala:96) ~[reactivemongo_2.11-0.10.5.0.akka23.jar:0.10.5.0.akka23]
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516) ~[akka-actor_2.11-2.3.6.jar:na]
+	at akka.actor.ActorCell.invoke(ActorCell.scala:487) ~[akka-actor_2.11-2.3.6.jar:na]
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:238) ~[akka-actor_2.11-2.3.6.jar:na]
+	at akka.dispatch.Mailbox.run(Mailbox.scala:220) ~[akka-actor_2.11-2.3.6.jar:na]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:393) [akka-actor_2.11-2.3.6.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.11.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.2.jar:na]
+
+2015-04-27 14:15:51,276 - [ERROR] - from securesocial.controllers.ProviderController in play-akka.actor.default-dispatcher-11 
+Unable to log user in. An exception was thrown
+reactivemongo.core.actors.Exceptions$PrimaryUnavailableException$: MongoError['No primary node is available!']
+	at reactivemongo.core.actors.Exceptions$PrimaryUnavailableException$.<clinit>(actors.scala) ~[reactivemongo_2.11-0.10.5.0.akka23.jar:0.10.5.0.akka23]
+	at reactivemongo.core.actors.MongoDBSystem$$anonfun$pickChannel$4.apply(actors.scala:508) ~[reactivemongo_2.11-0.10.5.0.akka23.jar:0.10.5.0.akka23]
+	at reactivemongo.core.actors.MongoDBSystem$$anonfun$pickChannel$4.apply(actors.scala:508) ~[reactivemongo_2.11-0.10.5.0.akka23.jar:0.10.5.0.akka23]
+	at scala.Option.getOrElse(Option.scala:120) ~[scala-library-2.11.2.jar:na]
+	at reactivemongo.core.actors.MongoDBSystem.pickChannel(actors.scala:508) ~[reactivemongo_2.11-0.10.5.0.akka23.jar:0.10.5.0.akka23]
+	at reactivemongo.core.actors.MongoDBSystem$$anonfun$receive$1.applyOrElse(actors.scala:273) ~[reactivemongo_2.11-0.10.5.0.akka23.jar:0.10.5.0.akka23]
+	at akka.actor.Actor$class.aroundReceive(Actor.scala:465) ~[akka-actor_2.11-2.3.6.jar:na]
+	at reactivemongo.core.actors.MongoDBSystem.aroundReceive(actors.scala:96) ~[reactivemongo_2.11-0.10.5.0.akka23.jar:0.10.5.0.akka23]
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:516) ~[akka-actor_2.11-2.3.6.jar:na]
+	at akka.actor.ActorCell.invoke(ActorCell.scala:487) ~[akka-actor_2.11-2.3.6.jar:na]
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:238) ~[akka-actor_2.11-2.3.6.jar:na]
+	at akka.dispatch.Mailbox.run(Mailbox.scala:220) ~[akka-actor_2.11-2.3.6.jar:na]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:393) [akka-actor_2.11-2.3.6.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) [scala-library-2.11.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) [scala-library-2.11.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) [scala-library-2.11.2.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) [scala-library-2.11.2.jar:na]
 

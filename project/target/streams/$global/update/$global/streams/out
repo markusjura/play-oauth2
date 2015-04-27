@@ -12646,7 +12646,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.5!apply-macro.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.4!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 2916ms :: artifacts dl 82ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 2820ms :: artifacts dl 84ms[0m
 [0m[[0mdebug[0m] [0m	report for default#play-oauth2-build;0.1-SNAPSHOT compile produced in /Users/mj/workspace/play-oauth2/project/target/resolution-cache/reports/default-play-oauth2-build-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#play-oauth2-build;0.1-SNAPSHOT runtime produced in /Users/mj/workspace/play-oauth2/project/target/resolution-cache/reports/default-play-oauth2-build-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#play-oauth2-build;0.1-SNAPSHOT test produced in /Users/mj/workspace/play-oauth2/project/target/resolution-cache/reports/default-play-oauth2-build-test.xml[0m
@@ -12660,5 +12660,5 @@
 [0m[[0mdebug[0m] [0m	report for default#play-oauth2-build;0.1-SNAPSHOT docs produced in /Users/mj/workspace/play-oauth2/project/target/resolution-cache/reports/default-play-oauth2-build-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#play-oauth2-build;0.1-SNAPSHOT pom produced in /Users/mj/workspace/play-oauth2/project/target/resolution-cache/reports/default-play-oauth2-build-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#play-oauth2-build;0.1-SNAPSHOT scala-tool produced in /Users/mj/workspace/play-oauth2/project/target/resolution-cache/reports/default-play-oauth2-build-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (2916ms resolve - 82ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (2820ms resolve - 84ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m

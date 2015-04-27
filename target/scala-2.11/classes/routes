@@ -2,11 +2,11 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-# Login page
-GET     /login                      @securesocial.controllers.LoginPage.login
-GET     /logout                     @securesocial.controllers.LoginPage.logout
+GET     /                              @controllers.Application.index
 
-GET     /                           @controllers.Application.index
+# Login page
+GET     /login                         @securesocial.controllers.LoginPage.login
+GET     /logout                        @securesocial.controllers.LoginPage.logout
 
 # Authentication entry points for all providers
 GET     /authenticate/:provider        @securesocial.controllers.ProviderController.authenticate(provider, redirectTo: Option[String])
@@ -14,24 +14,12 @@ POST    /authenticate/:provider        @securesocial.controllers.ProviderControl
 
 POST    /api/authenticate/:provider    @securesocial.controllers.LoginApi.authenticate(provider, builder = "token")
 
-# Registration routes
-GET         /signup        @securesocial.controllers.Registration.startSignUp
-POST        /signup        @securesocial.controllers.Registration.handleStartSignUp
-GET         /signup/:mailToken        @securesocial.controllers.Registration.signUp(mailToken)
-POST        /signup/:mailToken        @securesocial.controllers.Registration.handleSignUp(mailToken)
-
-# Reset password
-GET         /reset        @securesocial.controllers.PasswordReset.startResetPassword
-POST        /reset        @securesocial.controllers.PasswordReset.handleStartResetPassword
-GET         /reset/:mailToken        @securesocial.controllers.PasswordReset.resetPassword(mailToken)
-POST        /reset/:mailToken        @securesocial.controllers.PasswordReset.handleResetPassword(mailToken)
-
-# Change Password
-GET         /password        @securesocial.controllers.PasswordChange.page
-POST        /password        @securesocial.controllers.PasswordChange.handlePasswordChange
+# Mongo Test
+GET     /mongo/create                  controllers.MongoApp.create
+GET     /mongo/:name                   controllers.MongoApp.findByName(name)
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.at(path="/public", file)
-GET     /assets/*file               securesocial.controllers.Assets.at(path = "/public/securesocial", file)
+GET     /assets/*file                  controllers.Assets.at(path="/public", file)
+GET     /assets/*file                  securesocial.controllers.Assets.at(path = "/public/securesocial", file)
 
-->      /                                  securesocial.Routes
+->      /                              securesocial.Routes

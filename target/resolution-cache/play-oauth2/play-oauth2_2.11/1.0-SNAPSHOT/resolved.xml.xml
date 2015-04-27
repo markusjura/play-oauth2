@@ -4,7 +4,7 @@
 		module="play-oauth2_2.11"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20150427104810"
+		publication="20150427135914"
 	>
 		<description>
 		play-oauth2
@@ -40,6 +40,7 @@
 		<dependency org="com.typesafe.play" name="play-docs_2.11" rev="2.3.7" conf="docs->default(compile)"/>
 		<dependency org="com.typesafe.play" name="play-ws_2.11" rev="2.3.7" conf="compile->default(compile)"/>
 		<dependency org="ws.securesocial" name="securesocial_2.11" rev="master-SNAPSHOT" conf="compile->default(compile)"/>
+		<dependency org="org.reactivemongo" name="play2-reactivemongo_2.11" rev="0.10.5.0.akka23" conf="compile->default(compile)"/>
 		<dependency org="org.webjars" name="bootstrap" rev="3.3.4" conf="compile->default(compile)"/>
 		<dependency org="org.webjars" name="jquery" rev="1.11.2" conf="compile->default(compile)"/>
 	</dependencies>

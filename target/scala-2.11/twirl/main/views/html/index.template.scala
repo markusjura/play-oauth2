@@ -13,10 +13,10 @@ import play.api.data._
 import views.html._
 
 /**/
-object index extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template3[securesocial.core.BasicProfile,RequestHeader,securesocial.core.RuntimeEnvironment[services.DemoUser],play.twirl.api.HtmlFormat.Appendable] {
+object index extends BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with play.twirl.api.Template3[securesocial.core.BasicProfile,RequestHeader,securesocial.core.RuntimeEnvironment[models.DemoUser],play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(user: securesocial.core.BasicProfile)(implicit request: RequestHeader, env: securesocial.core.RuntimeEnvironment[services.DemoUser]):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(user: securesocial.core.BasicProfile)(implicit request: RequestHeader, env: securesocial.core.RuntimeEnvironment[models.DemoUser]):play.twirl.api.HtmlFormat.Appendable = {
       _display_ {import securesocial.core.IdentityProvider
 import securesocial.core.IdentityProvider
 import securesocial.core.providers.UsernamePasswordProvider
@@ -25,7 +25,7 @@ import play.api.{Logger, Play}
 import helper._
 import play.api.Play
 
-Seq[Any](format.raw/*1.135*/("""
+Seq[Any](format.raw/*1.133*/("""
 """),format.raw/*3.1*/("""
 """),format.raw/*10.1*/("""
 """),_display_(/*11.2*/main("SecureSocial - Sample Protected Page")/*11.46*/ {_display_(Seq[Any](format.raw/*11.48*/("""
@@ -76,19 +76,19 @@ Seq[Any](format.raw/*1.135*/("""
 """)))}))}
   }
 
-  def render(user:securesocial.core.BasicProfile,request:RequestHeader,env:securesocial.core.RuntimeEnvironment[services.DemoUser]): play.twirl.api.HtmlFormat.Appendable = apply(user)(request,env)
+  def render(user:securesocial.core.BasicProfile,request:RequestHeader,env:securesocial.core.RuntimeEnvironment[models.DemoUser]): play.twirl.api.HtmlFormat.Appendable = apply(user)(request,env)
 
-  def f:((securesocial.core.BasicProfile) => (RequestHeader,securesocial.core.RuntimeEnvironment[services.DemoUser]) => play.twirl.api.HtmlFormat.Appendable) = (user) => (request,env) => apply(user)(request,env)
+  def f:((securesocial.core.BasicProfile) => (RequestHeader,securesocial.core.RuntimeEnvironment[models.DemoUser]) => play.twirl.api.HtmlFormat.Appendable) = (user) => (request,env) => apply(user)(request,env)
 
   def ref: this.type = this
 
 }
               /*
                   -- GENERATED --
-                  DATE: Mon Apr 27 10:48:11 GMT 2015
+                  DATE: Mon Apr 27 14:00:34 GMT 2015
                   SOURCE: /Users/mj/workspace/play-oauth2/app/views/index.scala.html
-                  HASH: d612ba67f57eb75c9e685be3d39a12632788c890
-                  MATRIX: 599->1|1080->134|1107->178|1135->403|1163->405|1216->449|1256->451|1286->454|1358->499|1371->503|1416->527|1451->535|1464->539|1509->563|1577->603|1591->607|1637->631|1761->728|1774->732|1802->739|1857->767|1870->771|1915->795|1970->823|1983->827|2013->836|2069->865|2082->869|2126->892|2186->925|2199->929|2231->940|2282->964|2295->968|2314->978|2363->989|2392->991|2418->996|2439->998|2487->1025|2554->1065|2567->1069|2599->1080|2647->1102|2660->1106|2684->1121|2732->1131|2766->1138|2846->1191|2859->1195|2886->1201|2940->1228|2953->1232|2981->1239|3034->1262|3067->1269|3080->1273|3104->1288|3152->1298|3186->1305|3273->1365|3286->1369|3319->1381|3361->1396|3374->1400|3397->1414|3442->1421|3471->1422|3515->1439|3537->1440|3575->1447|3612->1457|3625->1461|3648->1475|3695->1484|3724->1485|3768->1502|3792->1505|3821->1506|3865->1519|3902->1529|3915->1533|3941->1550|3987->1558|4016->1559|4063->1579|4086->1581|4123->1587|4157->1594|4198->1605|4230->1610|4266->1620|4279->1624|4305->1641|4353->1651|4387->1658|4436->1680|4448->1683|4494->1708|4551->1735|4584->1741|4642->1772|4663->1784|4722->1822
+                  HASH: d3f03b7de6645eee89cd907f8f0153d72f886793
+                  MATRIX: 597->1|1076->132|1103->176|1131->401|1159->403|1212->447|1252->449|1282->452|1354->497|1367->501|1412->525|1447->533|1460->537|1505->561|1573->601|1587->605|1633->629|1757->726|1770->730|1798->737|1853->765|1866->769|1911->793|1966->821|1979->825|2009->834|2065->863|2078->867|2122->890|2182->923|2195->927|2227->938|2278->962|2291->966|2310->976|2359->987|2388->989|2414->994|2435->996|2483->1023|2550->1063|2563->1067|2595->1078|2643->1100|2656->1104|2680->1119|2728->1129|2762->1136|2842->1189|2855->1193|2882->1199|2936->1226|2949->1230|2977->1237|3030->1260|3063->1267|3076->1271|3100->1286|3148->1296|3182->1303|3269->1363|3282->1367|3315->1379|3357->1394|3370->1398|3393->1412|3438->1419|3467->1420|3511->1437|3533->1438|3571->1445|3608->1455|3621->1459|3644->1473|3691->1482|3720->1483|3764->1500|3788->1503|3817->1504|3861->1517|3898->1527|3911->1531|3937->1548|3983->1556|4012->1557|4059->1577|4082->1579|4119->1585|4153->1592|4194->1603|4226->1608|4262->1618|4275->1622|4301->1639|4349->1649|4383->1656|4432->1678|4444->1681|4490->1706|4547->1733|4580->1739|4638->1770|4659->1782|4718->1820
                   LINES: 19->1|28->1|29->3|30->10|31->11|31->11|31->11|32->12|33->13|33->13|33->13|33->13|33->13|33->13|33->13|33->13|33->13|40->20|40->20|40->20|41->21|41->21|41->21|42->22|42->22|42->22|43->23|43->23|43->23|44->24|44->24|44->24|45->25|45->25|45->25|45->25|45->25|45->25|45->25|45->25|46->26|46->26|46->26|49->29|49->29|49->29|49->29|50->30|53->33|53->33|53->33|54->34|54->34|54->34|56->36|58->38|58->38|58->38|58->38|59->39|62->42|62->42|62->42|63->43|63->43|63->43|63->43|63->43|63->43|63->43|63->43|64->44|64->44|64->44|64->44|64->44|64->44|64->44|64->44|64->44|65->45|65->45|65->45|65->45|65->45|65->45|65->45|65->45|66->46|67->47|68->48|69->49|69->49|69->49|69->49|70->50|70->50|70->50|70->50|71->51|73->53|74->54|74->54|74->54
                   -- GENERATED --
               */

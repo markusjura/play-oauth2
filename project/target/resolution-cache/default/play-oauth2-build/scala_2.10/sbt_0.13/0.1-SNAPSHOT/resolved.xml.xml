@@ -4,7 +4,7 @@
 		module="play-oauth2-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20150427103442"
+		publication="20150427132042"
 		e:sbtVersion="0.13" e:scalaVersion="2.10"
 	>
 		<description>
