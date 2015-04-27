@@ -47,3 +47,4 @@ reload
 run
 clean
 run
+exit

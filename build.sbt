@@ -11,7 +11,6 @@ resolvers += Resolver.sonatypeRepo("snapshots")
 libraryDependencies ++= Seq(
   ws,
   "ws.securesocial" %% "securesocial" % "master-SNAPSHOT",
-
   // Client dependencies
   "org.webjars" % "bootstrap" % "3.3.4",
   "org.webjars" % "jquery" % "1.11.2"
