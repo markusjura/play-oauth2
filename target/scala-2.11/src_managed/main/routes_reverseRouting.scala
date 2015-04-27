@@ -1,6 +1,6 @@
-// @SOURCE:/Users/mj/workspace/play24/conf/routes
-// @HASH:70ae786c9a8795a913e9e5eb07cbd6c9a32b51d6
-// @DATE:Sun Apr 26 10:52:32 GMT 2015
+// @SOURCE:/Users/mj/workspace/play-oauth2/conf/routes
+// @HASH:af95662c07d016d92d40b7ad1830002c9920253e
+// @DATE:Mon Apr 27 10:35:29 GMT 2015
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -48,6 +48,7 @@ def index(): Call = {
 }
                   
 
+// @LINE:25
 // @LINE:15
 // @LINE:13
 // @LINE:12
@@ -85,6 +86,20 @@ def authenticateByPost(provider:String, redirectTo:Option[String]): Call = {
 def authenticate(provider:String, redirectTo:Option[String]): Call = {
    import ReverseRouteContext.empty
    Call("GET", _prefix + { _defaultPrefix } + "authenticate/" + implicitly[PathBindable[String]].unbind("provider", dynamicString(provider)) + queryString(List(Some(implicitly[QueryStringBindable[Option[String]]].unbind("redirectTo", redirectTo)))))
+}
+                        
+
+}
+                          
+
+// @LINE:25
+class ReverseAssets {
+
+
+// @LINE:25
+def at(file:String): Call = {
+   implicit val _rrc = new ReverseRouteContext(Map(("path", "/public/securesocial")))
+   Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[String]].unbind("file", file))
 }
                         
 
@@ -159,6 +174,7 @@ def index : JavascriptReverseRoute = JavascriptReverseRoute(
 }
         
 
+// @LINE:25
 // @LINE:15
 // @LINE:13
 // @LINE:12
@@ -207,6 +223,24 @@ def authenticate : JavascriptReverseRoute = JavascriptReverseRoute(
    """
       function(provider,redirectTo) {
       return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "authenticate/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("provider", encodeURIComponent(provider)) + _qS([(""" + implicitly[QueryStringBindable[Option[String]]].javascriptUnbind + """)("redirectTo", redirectTo)])})
+      }
+   """
+)
+                        
+
+}
+              
+
+// @LINE:25
+class ReverseAssets {
+
+
+// @LINE:25
+def at : JavascriptReverseRoute = JavascriptReverseRoute(
+   "securesocial.controllers.Assets.at",
+   """
+      function(file) {
+      return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "assets/" + (""" + implicitly[PathBindable[String]].javascriptUnbind + """)("file", file)})
       }
    """
 )
@@ -281,6 +315,7 @@ def index(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 }
         
 
+// @LINE:25
 // @LINE:15
 // @LINE:13
 // @LINE:12
@@ -316,6 +351,19 @@ def authenticateByPost(provider:String, redirectTo:Option[String]): play.api.mvc
 // @LINE:12
 def authenticate(provider:String, redirectTo:Option[String]): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    play.api.Play.maybeApplication.map(_.global).getOrElse(play.api.DefaultGlobal).getControllerInstance(classOf[securesocial.controllers.ProviderController]).authenticate(provider, redirectTo), HandlerDef(this.getClass.getClassLoader, "", "securesocial.controllers.ProviderController", "authenticate", Seq(classOf[String], classOf[Option[String]]), "GET", """ Authentication entry points for all providers""", _prefix + """authenticate/$provider<[^/]+>""")
+)
+                      
+
+}
+                          
+
+// @LINE:25
+class ReverseAssets {
+
+
+// @LINE:25
+def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   securesocial.controllers.Assets.at(path, file), HandlerDef(this.getClass.getClassLoader, "", "securesocial.controllers.Assets", "at", Seq(classOf[String], classOf[String]), "GET", """""", _prefix + """assets/$file<.+>""")
 )
                       
 

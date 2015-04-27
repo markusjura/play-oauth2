@@ -1,6 +1,6 @@
-// @SOURCE:/Users/mj/workspace/play24/conf/routes
-// @HASH:70ae786c9a8795a913e9e5eb07cbd6c9a32b51d6
-// @DATE:Sun Apr 26 10:52:32 GMT 2015
+// @SOURCE:/Users/mj/workspace/play-oauth2/conf/routes
+// @HASH:af95662c07d016d92d40b7ad1830002c9920253e
+// @DATE:Mon Apr 27 10:35:29 GMT 2015
 
 
 import play.core._
@@ -21,7 +21,7 @@ private var _prefix = "/"
 
 def setPrefix(prefix: String) {
   _prefix = prefix
-  List[(String,Routes)]().foreach {
+  List[(String,Routes)](("",securesocial.Routes)).foreach {
     case (p, router) => router.setPrefix(prefix + (if(prefix.endsWith("/")) "" else "/") + p)
   }
 }
@@ -79,7 +79,18 @@ private[this] lazy val controllers_Assets_at6_invoker = createInvoker(
 controllers.Assets.at(fakeValue[String], fakeValue[String]),
 HandlerDef(this.getClass.getClassLoader, "", "controllers.Assets", "at", Seq(classOf[String], classOf[String]),"GET", """ Map static resources from the /public folder to the /assets URL path""", Routes.prefix + """assets/$file<.+>"""))
         
-def documentation = List(("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """login""","""@securesocial.controllers.LoginPage@.login"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """logout""","""@securesocial.controllers.LoginPage@.logout"""),("""GET""", prefix,"""@controllers.Application@.index"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """authenticate/$provider<[^/]+>""","""@securesocial.controllers.ProviderController@.authenticate(provider:String, redirectTo:Option[String])"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """authenticate/$provider<[^/]+>""","""@securesocial.controllers.ProviderController@.authenticateByPost(provider:String, redirectTo:Option[String])"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """api/authenticate/$provider<[^/]+>""","""@securesocial.controllers.LoginApi@.authenticate(provider:String, builder:String = "token")"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
+
+// @LINE:25
+private[this] lazy val securesocial_controllers_Assets_at7_route = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
+private[this] lazy val securesocial_controllers_Assets_at7_invoker = createInvoker(
+securesocial.controllers.Assets.at(fakeValue[String], fakeValue[String]),
+HandlerDef(this.getClass.getClassLoader, "", "securesocial.controllers.Assets", "at", Seq(classOf[String], classOf[String]),"GET", """""", Routes.prefix + """assets/$file<.+>"""))
+        
+
+// @LINE:27
+lazy val securesocial_Routes8 = Include(securesocial.Routes)
+        
+def documentation = List(("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """login""","""@securesocial.controllers.LoginPage@.login"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """logout""","""@securesocial.controllers.LoginPage@.logout"""),("""GET""", prefix,"""@controllers.Application@.index"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """authenticate/$provider<[^/]+>""","""@securesocial.controllers.ProviderController@.authenticate(provider:String, redirectTo:Option[String])"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """authenticate/$provider<[^/]+>""","""@securesocial.controllers.ProviderController@.authenticateByPost(provider:String, redirectTo:Option[String])"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """api/authenticate/$provider<[^/]+>""","""@securesocial.controllers.LoginApi@.authenticate(provider:String, builder:String = "token")"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""securesocial.controllers.Assets.at(path:String = "/public/securesocial", file:String)"""),securesocial.Routes.documentation).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
   case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
   case l => s ++ l.asInstanceOf[List[(String,String,String)]]
 }}
@@ -141,6 +152,18 @@ case controllers_Assets_at6_route(params) => {
         controllers_Assets_at6_invoker.call(controllers.Assets.at(path, file))
    }
 }
+        
+
+// @LINE:25
+case securesocial_controllers_Assets_at7_route(params) => {
+   call(Param[String]("path", Right("/public/securesocial")), params.fromPath[String]("file", None)) { (path, file) =>
+        securesocial_controllers_Assets_at7_invoker.call(securesocial.controllers.Assets.at(path, file))
+   }
+}
+        
+
+// @LINE:27
+case securesocial_Routes8(handler) => handler
         
 }
 

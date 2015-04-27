@@ -1,6 +1,6 @@
-// @SOURCE:/Users/mj/workspace/play24/conf/routes
-// @HASH:70ae786c9a8795a913e9e5eb07cbd6c9a32b51d6
-// @DATE:Sun Apr 26 10:52:32 GMT 2015
+// @SOURCE:/Users/mj/workspace/play-oauth2/conf/routes
+// @HASH:af95662c07d016d92d40b7ad1830002c9920253e
+// @DATE:Mon Apr 27 10:35:29 GMT 2015
 
 package controllers;
 
